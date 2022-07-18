@@ -214,7 +214,7 @@ body {
   padding-bottom: 200px;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/index_logo/header-img.jpg);
-
+  max-width: 1600px;
   background-repeat: no-repeat;
   background-size: cover;
 }
