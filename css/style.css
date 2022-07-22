@@ -58,6 +58,33 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* убираем рамку браузера */
+a:active,
+a:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+input:active,
+textarea:active {
+  outline: none;
+}
+:focus {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+textarea {
+  resize: vertical;
+}
+textarea {
+  resize: horizontal;
+}
+/* убираем рамку браузера */
 .team-item img {
   margin-bottom: 30px;
 }
@@ -81,7 +108,6 @@ body {
 
 .page-header .logo {
   margin-right: 93px;
-  align-items: center;
 }
 
 .list {
@@ -109,7 +135,6 @@ body {
   color: var(--color-dark-grey);
   display: flex;
   column-gap: 50px;
-  margin-right: auto;
 }
 
 .nav {
@@ -169,6 +194,7 @@ body {
   flex-wrap: wrap;
   /* Set gap between rows and columns */
   gap: 30px;
+  justify-content: center;
 }
 
 .description-item {
@@ -200,6 +226,7 @@ body {
   justify-content: center;
   padding-top: 32px;
   padding-bottom: 32px;
+  align-items: center;
 }
 
 .contact-link:hover,
@@ -214,9 +241,13 @@ body {
   padding-bottom: 200px;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/index_logo/header-img.jpg);
-
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .hero-title {
@@ -377,13 +408,16 @@ body {
   line-height: 1.87;
   /* identical to box height, or 188% */
 }
+.portfolio-link {
+  display: inline-block;
+}
 
 .portfolio-item {
-  border: var(--color-border);
   flex-basis: calc((100% - 60px) / 3);
 }
 
-.portfolio-item:hover {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -420,7 +454,6 @@ body {
 
 .contact-list .icon {
   fill: currentColor;
-  align-self: center;
   margin-right: 10px;
 }
 
@@ -480,37 +513,36 @@ body {
   fill: var(--color-social-links);
 }
 
-.socials-link:hover {
+.socials-link:hover,
+.socials-link:focus {
   background-color: var(--color-light-blue);
 }
 
 .socials-link:hover .socials-icon {
   fill: var(--color-white);
 }
+.socials-link:focus .socials-icon {
+  fill: var(--color-white);
+}
 
 .footer-social-title {
   color: var(--color-white);
-  padding-bottom: 20px;
-}
-
-.footer-social-list {
-  width: 206px;
-  height: 80px;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 100px;
-  margin-left: 70px;
+  margin-bottom: 20px;
 }
 
 .footer-container {
   display: inline-flex;
+  gap: 70px;
+  align-items: baseline;
 }
 
 .footer-socials-icon {
   fill: var(--color-white);
 }
-
-.footer-socials-link {
+.footer-section .socials-link {
+  background-color: var(--color-bg-footer-social-links);
+}
+/* .footer-socials-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -519,13 +551,14 @@ body {
   background-color: var(--color-bg-footer-social-links);
   border-radius: 50%;
   margin-bottom: 30px;
-}
+} */
 
-.footer-socials-link:hover {
+.footer-section .socials-link:hover,
+.footer-section .socials-link:focus {
   background-color: var(--color-light-blue);
 }
 
-.client-section-title {
+/* .client-section-title {
   text-align: center;
   font-family: 'Roboto';
   font-style: normal;
@@ -535,7 +568,7 @@ body {
   color: var(--color-dark-grey);
 
   margin-bottom: 50px;
-}
+} */
 
 .client-list {
   display: flex;
@@ -543,13 +576,15 @@ body {
   justify-content: center;
   gap: 30px;
 }
-
 .client-logo-item {
+  flex-basis: calc((100% - 150px) / 6);
+}
+.client-link {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 92px;
-  width: 170px;
+
   border: var(--color-client-border);
 
   border-radius: 4px;
@@ -560,11 +595,15 @@ body {
   fill: var(--color-grey);
 }
 
-.client-logo-item:hover {
-  color: var(--color-light-blue);
+.client-link:hover,
+.client-link:focus {
+  fill: var(--color-light-blue);
   border: var(--color-client-bord-hover);
 }
 
-.client-logo-item:hover .socials-icon-logo {
+.client-link:hover .socials-icon-logo {
+  fill: var(--color-light-blue);
+}
+.client-link:focus .socials-icon-logo {
   fill: var(--color-light-blue);
 }
